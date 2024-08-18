@@ -1,0 +1,19 @@
+.main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .gallery{
+    width: 100%;
+  }
+
+
+  @media  screen and (max-width:480px){
+    .main{
+      height: 100%;
+      padding: 0;
+    }
+  }
