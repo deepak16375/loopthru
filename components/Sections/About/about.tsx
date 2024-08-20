@@ -1,70 +1,92 @@
-'use client';
-import Image from "next/image";
+'use client'
+import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
-import Pic2 from '@/public/2.jpeg';
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { useEffect, useRef, RefObject } from "react";
-import Lenis from 'lenis';
-
-export default function About() {
-  const container = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"]
-  });
-
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
-
-  return (
-    <main ref={container} className="relative h-[200vh]">
-      <Section1 scrollYProgress={scrollYProgress} />
-      <Section2 scrollYProgress={scrollYProgress} />
-    </main>
-  );
+interface FAQItemProps {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  toggle: () => void;
 }
 
-interface SectionProps {
-  scrollYProgress: MotionValue<number>;
-}
-
-const Section1: React.FC<SectionProps> = ({ scrollYProgress }) => {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
-
+const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, toggle }) => {
   return (
-    <motion.div
-      style={{ scale, rotate }}
-      className="sticky top-0 h-screen bg-[#FFD53D] text-[3.5vw] flex flex-col items-center justify-center text-black pb-[10vh]"
+    <div className="border-b border-gray-200 py-4">
+    <button 
+      className="flex justify-between items-center w-full text-left"
+      onClick={toggle}
     >
-      <p className="text-4xl md:text-5xl lg:text-9xl ">About Us</p>
-     
+      <h3 className="text-lg font-semibold text-black">{question}</h3>
+      <span className="text-black">
+        {isOpen ? <FaMinus /> : <FaPlus />}
+      </span>
+    </button>
+    <motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+      transition={{ duration: 0.3 }}
+      className="overflow-hidden"
+    >
+      <motion.p className="mt-2 text-black text-sm">
+        {answer}
+      </motion.p>
     </motion.div>
+  </div>
   );
 };
 
-const Section2: React.FC<SectionProps> = ({ scrollYProgress }) => {
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
+interface FAQ {
+  question: string;
+  answer: string;
+}
 
+const About: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const faqs: FAQ[] = [
+    {
+      question: 'Journey to 650K: An Extraordinary Milestone',
+      answer: 'Never in our wildest dreams could we have imagined that it would transform into a platform with over 650K followers, amassing an incredible 126 million+ impressions and a monthly reach of 66 million!',
+    },
+    {
+      question: 'Powerhouse in Media and Branding',
+      answer: 'We are recognized as a powerhouse in media and branding, leading with creativity and innovation.',
+    },
+    {
+      question: 'Driving Media Excellence',
+      answer: 'Our mission is to drive media excellence through our passionate community and engaging content.',
+    },
+  ];
   return (
-    <motion.div
-      style={{ scale, rotate }}
-      className="relative h-screen"
-    >
-     
-      <div className="bg-white w-full h-screen">
-      <h1 className=" text-4xl  lg:text-9xl text-black ">About us</h1>
-
+    <div className="w-full h-auto lg:h-[600px] flex flex-col lg:flex-row justify-center items-center  " id='work'>
+    <div className="w-full lg:w-1/2 bg-red-400 h-[300px] lg:h-full overflow-hidden">
+      <img 
+        src="/about.svg" 
+        alt="illustration" 
+        className="w-full h-full object-cover" 
+      />
+    </div>
+    <div className="w-full lg:w-1/2 bg-gray-100 h-auto lg:h-full p-6 lg:p-10 flex flex-col justify-center items-center gap-8 lg:gap-10">
+      <p className="text-2xl lg:text-3xl text-black text-left">
+        <span className="font-bold">Loopthru</span> started as a modest platform, driven by a deep passion for connecting <span className="font-bold">brands</span> with influential <span className="text-black font-bold">storytellers</span>.
+      </p>
+      <div className="space-y-4 w-full">
+        {faqs.map((faq, index) => (
+          <FAQItem 
+            key={index} 
+            question={faq.question} 
+            answer={faq.answer} 
+            isOpen={openIndex === index} 
+            toggle={() => setOpenIndex(openIndex === index ? null : index)} 
+          />
+        ))}
       </div>
-    </motion.div>
-  );
-};
+    </div>
+  </div>
+  )
+}
+
+export default About
+
+

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { ClipLoader } from "react-spinners";
 import "react-toastify/dist/ReactToastify.css";
+import Image from 'next/image'
 
 type Tab = "brands" | "influencers" | "career";
 
@@ -102,7 +103,7 @@ const Footer: React.FC = () => {
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  bg-black text-white focus:bg-black focus:outline-none focus:border-yellow-500"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -113,7 +114,7 @@ const Footer: React.FC = () => {
                 type="email"
                 name="email"
                 placeholder="Email Address"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  bg-black text-white focus:bg-black focus:outline-none focus:border-yellow-500"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -124,17 +125,18 @@ const Footer: React.FC = () => {
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  bg-black text-white focus:bg-black focus:outline-none focus:border-yellow-500"
                 value={formData.phone}
                 onChange={handleChange}
+                
               />
             </div>
             <div className="mb-4">
               <input
-                type="url"
+                type="text"
                 name="website"
                 placeholder="Website"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  bg-black text-white focus:bg-black focus:outline-none focus:border-yellow-500"
                 value={formData.website}
                 onChange={handleChange}
               />
@@ -143,7 +145,7 @@ const Footer: React.FC = () => {
               <textarea
                 name="message"
                 placeholder="Message"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  bg-black focus:bg-black text-white focus:outline-none focus:border-yellow-500"
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
@@ -160,7 +162,7 @@ const Footer: React.FC = () => {
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2  bg-black text-white border-b-[1px]  focus:bg-black focus:outline-none focus:border-yellow-500"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -171,7 +173,7 @@ const Footer: React.FC = () => {
                 type="email"
                 name="email"
                 placeholder="Email Address"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -182,7 +184,7 @@ const Footer: React.FC = () => {
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -190,7 +192,7 @@ const Footer: React.FC = () => {
             <div className="mb-4">
               <select
                 name="socialType"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.socialType || ""}
                 onChange={handleChange}
               >
@@ -207,7 +209,7 @@ const Footer: React.FC = () => {
                 type="text"
                 name="social"
                 placeholder="Social Media Handle"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.social || ""}
                 onChange={handleChange}
               />
@@ -218,7 +220,7 @@ const Footer: React.FC = () => {
                 type="text"
                 name="followers"
                 placeholder="Number of Followers"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.followers || ""}
                 onChange={handleChange}
               />
@@ -227,7 +229,7 @@ const Footer: React.FC = () => {
               <textarea
                 name="message"
                 placeholder="Message"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
@@ -244,7 +246,7 @@ const Footer: React.FC = () => {
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -255,7 +257,7 @@ const Footer: React.FC = () => {
                 type="email"
                 name="email"
                 placeholder="Email Address"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -266,7 +268,7 @@ const Footer: React.FC = () => {
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -276,7 +278,7 @@ const Footer: React.FC = () => {
                 type="text"
                 name="location"
                 placeholder="Location (city)"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.location || ""}
                 onChange={handleChange}
               />
@@ -286,7 +288,7 @@ const Footer: React.FC = () => {
                 type="url"
                 name="linkedin"
                 placeholder="LinkedIn Profile"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 value={formData.linkedin || ""}
                 onChange={handleChange}
               />
@@ -295,7 +297,7 @@ const Footer: React.FC = () => {
               <textarea
                 name="message"
                 placeholder="Message"
-                className="w-full p-2 border border-gray-600 rounded bg-black text-white focus:outline-none focus:border-yellow-500"
+                className="w-full p-2 border-b-[1px]  focus:bg-black bg-black text-white focus:outline-none focus:border-yellow-500"
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
@@ -309,19 +311,22 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center min-h-screen bg-black text-white p-5" id="contact">
-      <h1 className="text-yellow-500 text-4xl md:text-5xl font-bold mb-5">
+    <div className="w-full flex flex-col items-start justify-center min-h-screen bg-black text-white p-5 lg:px-48" id="contact">
+      <div className=" pb-4">
+      <Image src="/logo.webp" height={100} width={100} alt='logo' className=""/>
+      </div>
+      <h1 className=" text-4xl md:text-2xl font-bold mb-5">
         LET&apos;S CONNECT!
       </h1>
-      <p className="text-gray-400 text-center max-w-xl mb-5">
+      <p className=" text-white max-w-xl mb-5">
         When there are great ideas at stake, it&apos;s always a good idea to
         share. Tell us how we can make it happen for you!
       </p>
-      <p className="text-gray-400 mb-10">
+      <p className=" mb-10">
         Fill the form below or mail us at{" "}
         <a
           href="mailto:business@loopthru.in"
-          className="text-yellow-500 underline"
+          className="text-blue-500 underline"
         >
           business@loopthru.in
         </a>
@@ -363,9 +368,9 @@ const Footer: React.FC = () => {
         {renderForm()}
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-yellow-500 text-black rounded hover:bg-yellow-600"
+          className="py-2 px-4  text-white  rounded-full border border-white"
         >
-          {loading ? <ClipLoader size={24} color="#000" /> : "Submit"}
+          {loading ? <ClipLoader size={24} color="#fff" /> : "Submit"}
         </button>
       </form>
 
