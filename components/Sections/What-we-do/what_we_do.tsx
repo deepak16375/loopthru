@@ -11,12 +11,12 @@ interface CardData {
 }
 
 const cardData: CardData[] = [
-  { imageSrc: "/media.png", title: "Media Promotions", description: "Go Viral with our promotions!" },
-  { imageSrc: "/media.png", title: "Web Development", description: "Build modern web applications!" },
-  { imageSrc: "/media.png", title: "Design", description: "Create stunning visual designs!" },
-  { imageSrc: "/media.png", title: "Media Promotions", description: "Go Viral with our promotions!" },
-  { imageSrc: "/media.png", title: "Web Development", description: "Build modern web applications!" },
-  { imageSrc: "/media.png", title: "Design", description: "Create stunning visual designs!" }
+  { imageSrc: "/media.png", title: "Influencer Marketing", description: "At LoopThru, we connect brands with audiences through authentic influencer partnerships. Our mission is to create impactful campaigns that resonate, driving real results. With a focus on creativity, transparency, and innovation, we help brands and creators forge lasting connections that inspire." },
+  { imageSrc: "/media.png", title: "Talent Management", description: "Our Talent Management service offers personalized, strategic support designed to elevate your brand and career. We combine innovation with a tailored approach to ensure authentic growth and impactful success." },
+  { imageSrc: "/media.png", title: "Website Development", description: "Our Website Development service focuses on turning your vision into a vibrant reality. We create websites that reflect your goals and drive your success, blending creativity with functionality to achieve your unique objectives." },
+  { imageSrc: "/media.png", title: "Performance Marketing", description: "Our Performance Marketing service is dedicated to ensuring our clients achieve the best possible results. We focus on optimizing every campaign to drive measurable success. By leveraging data-driven strategies and personalized approaches, we maximize ROI and deliver impactful, results-oriented marketing solutions." },
+  { imageSrc: "/media.png", title: "Video Production", description: "Build modern web applications!" },
+  { imageSrc: "/media.png", title: "Social Media Management", description: "Create stunning visual designs!" }
 ];
 
 const textVariants = {
