@@ -311,7 +311,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-start justify-center min-h-screen bg-black text-white p-5 lg:px-48" id="Contact">
+    <div className="w-full flex flex-col items-start justify-center min-h-screen bg-black text-white p-5 lg:px-48" id="contact" >
       <div className=" pb-4">
       <Image src="/footerlogo.svg" height={150} width={150} alt='logo' />
       </div>
