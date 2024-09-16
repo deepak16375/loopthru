@@ -1,3 +1,4 @@
+// Link.tsx
 import styles from '@/components/style.module.scss';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -9,14 +10,20 @@ type Data = {
   index: number;
 };
 
-type IndexProps = {
+type LinkProps = {
   data: Data;
   isActive: boolean;
   setSelectedIndicator: (href: string) => void;
+  setIsActive: (active: boolean) => void; // Add setIsActive as a prop
 };
 
-export default function Index({ data, isActive, setSelectedIndicator }: IndexProps) {
+export default function LinkComponent({ data, isActive, setSelectedIndicator, setIsActive }: LinkProps) {
   const { title, href, index } = data;
+
+  const handleClick = () => {
+    setSelectedIndicator(href); // Update the active indicator on click
+    setIsActive(false); // Close the navbar on link click
+  };
 
   return (
     <motion.div
@@ -30,10 +37,10 @@ export default function Index({ data, isActive, setSelectedIndicator }: IndexPro
     >
       <motion.div
         variants={scale}
-        animate={isActive ? "open" : "closed"}
+        animate={isActive ? 'open' : 'closed'}
         className={styles.indicator}
       />
-      <Link href={href}>{title}</Link>
+      <Link href={href} onClick={handleClick}>{title}</Link>
     </motion.div>
   );
 }

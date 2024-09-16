@@ -15,8 +15,8 @@ const cardData: CardData[] = [
   { imageSrc: "/media.png", title: "Talent Management", description: "Our Talent Management service offers personalized, strategic support designed to elevate your brand and career. We combine innovation with a tailored approach to ensure authentic growth and impactful success." },
   { imageSrc: "/media.png", title: "Website Development", description: "Our Website Development service focuses on turning your vision into a vibrant reality. We create websites that reflect your goals and drive your success, blending creativity with functionality to achieve your unique objectives." },
   { imageSrc: "/media.png", title: "Performance Marketing", description: "Our Performance Marketing service is dedicated to ensuring our clients achieve the best possible results. We focus on optimizing every campaign to drive measurable success. By leveraging data-driven strategies and personalized approaches, we maximize ROI and deliver impactful, results-oriented marketing solutions." },
-  { imageSrc: "/media.png", title: "Video Production", description: "Build modern web applications!" },
-  { imageSrc: "/media.png", title: "Social Media Management", description: "Create stunning visual designs!" }
+  { imageSrc: "/media.png", title: "Video Production", description: "Our Video Production service is dedicated to bringing our clients' vision to life, ensuring they achieve the best possible results. We focus on every detail, from concept to execution to create impactful, high-quality content that resonates with their target audience." },
+  { imageSrc: "/media.png", title: "Social Media Management", description: "Our Social Media Management service is focused on crafting tailored strategies, managing content, and engaging with audiences to maximize online presence and drive meaningful growth for our clients' brands.Create stunning visual designs!" }
 ];
 
 const textVariants = {
@@ -26,7 +26,7 @@ const textVariants = {
 
 const what_we_do = () => {
   return (
-    <div className="flex flex-col md:px-10 p-5 gap-10">
+    <div className="flex flex-col md:px-10 p-5 gap-10" id="work">
       <div>
         <motion.p
           variants={textVariants}

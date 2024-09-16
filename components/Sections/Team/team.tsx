@@ -58,7 +58,7 @@ const Team: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white p-5">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white p-5" id='team'>
       <div className="text-center mb-10">
         <h4 className="inline-block p-5 text-black text-3xl md:text-5xl font-semibold">
           Our Team

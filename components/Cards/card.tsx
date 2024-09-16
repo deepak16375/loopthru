@@ -31,9 +31,9 @@ const HoverCard: React.FC<HoverCardProps> = ({ imageSrc, title, description }) =
         </div>
         {/* Overlay that will show on hover */}
         <div className="absolute inset-0 flex items-end justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-          <div className="w-full h-1/2 bg-gradient-to-t from-[#FFD53D] to-black opacity-95 flex items-center justify-center text-white">
-            <p className="text-center px-4 text-sm">{description}</p>
-          </div>
+          <div className="w-full h-1/2 bg-gradient-to-t from-[#FFD53D] to-black opacity-95 flex items-center justify-center text-white ">
+            <p className="text-center px-4 text-xs md:text-sm">{description}</p>
+          </div> 
         </div>
       </div>
       <h2 className="text-xl font-semibold p-10 text-center">{title}</h2>

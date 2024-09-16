@@ -201,7 +201,7 @@ const Footer: React.FC = () => {
                 <option value="twitter">Twitter</option>
                 <option value="facebook">Facebook</option>
                 <option value="linkedin">LinkedIn</option>
-                <option value="other">Other</option>
+                <option value="other">Youtube</option>
               </select>
             </div>
             <div className="mb-4">
@@ -311,7 +311,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-start justify-center min-h-screen bg-black text-white p-5 lg:px-48" id="contact">
+    <div className="w-full flex flex-col items-start justify-center min-h-screen bg-black text-white p-5 lg:px-48" id="Contact">
       <div className=" pb-4">
       <Image src="/logo.webp" height={100} width={100} alt='logo' className=""/>
       </div>
@@ -332,7 +332,7 @@ const Footer: React.FC = () => {
         </a>
       </p>
 
-      <div className="flex justify-center mb-5">
+      <div className="flex justify-center mb-5 text-sm md:text-base  ">
   <button
     onClick={() => setActiveTab("brands")}
     className={`px-4 py-2 ${
@@ -374,7 +374,6 @@ const Footer: React.FC = () => {
         </button>
       </form>
 
-      {/* Toast Container */}
       <ToastContainer />
     </div>
   );

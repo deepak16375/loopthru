@@ -59,7 +59,7 @@ const About: React.FC = () => {
     },
   ];
   return (
-    <div className="w-full h-auto lg:h-[600px] flex flex-col lg:flex-row justify-center items-center  " id='work'>
+    <div className="w-full h-auto lg:h-[600px] flex flex-col lg:flex-row justify-center items-center  " id='about'>
     <div className="w-full lg:w-1/2 bg-red-400 h-[300px] lg:h-full overflow-hidden">
       <img 
         src="/about.svg" 

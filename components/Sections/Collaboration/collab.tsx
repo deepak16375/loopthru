@@ -4,6 +4,12 @@ import styles from './collab.module.scss';
 import Image from 'next/image';
 import Lenis from '@studio-freight/lenis';
 import { useTransform, useScroll, motion, MotionValue } from 'framer-motion';
+import localFont from 'next/font/local'
+const provicali = localFont({
+  src: '../../../public/fonts/Provicali.otf',
+  weight: 'normal',
+  
+})
 
 const images = [
   '1.jpg',
@@ -61,14 +67,14 @@ export default function Collab() {
 
   return (
     <main className={styles.main} id='Collaboration'>
-      <div className="h-screen w-full text-4xl md:7xl lg:text-9xl flex justify-center items-center text-center bg-yellow-400">Brands we&apos;ve served</div>
+      <div className={ `${provicali.className} h-80 w-full text-4xl md:7xl lg:text-9xl flex justify-center items-center text-center bg-yellow-400 uppercase`}>Brands we&apos;ve served</div>
       <div ref={gallery} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
         <Column images={[images[6], images[7], images[8]]} y={y3} />
         <Column images={[images[9], images[10], images[11]]} y={y4} />
       </div>
-      <div className="h-screen w-full text-4xl md:7xl lg:text-9xl flex justify-center items-center text-center bg-yellow-400">Collabs Based
+      <div className={` ${provicali.className} h-80 w-full text-4xl md:7xl lg:text-9xl flex justify-center items-center text-center bg-yellow-400 uppercase`}>Collabs Based
       On Trust Only.</div>
     </main>
   );
