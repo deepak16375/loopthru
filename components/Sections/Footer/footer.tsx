@@ -313,7 +313,7 @@ const Footer: React.FC = () => {
   return (
     <div className="w-full flex flex-col items-start justify-center min-h-screen bg-black text-white p-5 lg:px-48" id="Contact">
       <div className=" pb-4">
-      <Image src="/logo.webp" height={100} width={100} alt='logo' className=""/>
+      <Image src="/logo.svg" height={100} width={100} alt='logo' className=""/>
       </div>
       <h1 className=" text-4xl md:text-2xl font-bold mb-5">
         LET&apos;S CONNECT!
