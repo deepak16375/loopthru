@@ -67,15 +67,23 @@ export default function Collab() {
 
   return (
     <main className={styles.main} id='Collaboration'>
-      <div className={ `${provicali.className} h-80 w-full text-4xl md:7xl lg:text-9xl flex justify-center items-center text-center bg-yellow-400 uppercase`}>Brands we&apos;ve served</div>
+      <div className={ `${provicali.className} h-80 w-full text-4xl md:7xl lg:text-9xl flex justify-center items-center text-center bg-yellow-400 uppercase`}> <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 , }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      >Brands we&apos;ve served</motion.h1></div>
       <div ref={gallery} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
         <Column images={[images[6], images[7], images[8]]} y={y3} />
         <Column images={[images[9], images[10], images[11]]} y={y4} />
       </div>
-      <div className={` ${provicali.className} h-80 w-full text-4xl md:7xl lg:text-9xl flex justify-center items-center text-center bg-yellow-400 uppercase`}>Collabs Based
-      On Trust Only.</div>
+      <div className={` ${provicali.className} h-80 w-full text-4xl md:7xl lg:text-9xl flex justify-center items-center text-center bg-yellow-400 uppercase`}> <motion.h1
+       initial={{ opacity: 0, y: 40 }}
+       whileInView={{ opacity: 1, y: 0  }}
+       transition={{ duration: 0.7, ease: 'easeOut' }}
+      >Collabs Based
+      On Trust Only.</motion.h1></div>
     </main>
   );
 }

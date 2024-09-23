@@ -8,7 +8,6 @@ const Navbar = () => {
   const handleScrollToContact = () => {
     const contactSection = document.getElementById('contact');
     
-    // Debugging to check if contact section is found
     console.log('Contact Section:', contactSection); 
     
     if (contactSection) {
