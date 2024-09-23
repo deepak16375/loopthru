@@ -30,7 +30,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ imageSrc, title, description }) =
           <Image
             src={imageSrc}
             alt={title}
-            layout="responsive" // Ensures the image is responsive
+          
             width={400} // Example width
             height={300} // Example height (change based on your image aspect ratio)
             className="object-cover rounded-lg"

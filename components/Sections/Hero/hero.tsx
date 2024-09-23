@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import React from 'react';
-
 const Hero: React.FC = () => {
   return (
     <section className=" bg-gradient-to-t lg:bg-gradient-to-r from-white to-yellow-300 py-16 px-4 sm:px-8 w-full lg:h-screen  flex items-center justify-center">
@@ -27,10 +27,13 @@ const Hero: React.FC = () => {
         <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end space-x-4 px-4 sm:px-0">
      
            
-           <img
+           <Image
          src="/group.svg"
          alt="Influencer 2"
          className=" "
+         width={800}
+         height={800}
+        loading='lazy'
        />
      
          
